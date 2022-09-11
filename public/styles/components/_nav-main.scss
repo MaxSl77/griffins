@@ -1,0 +1,17 @@
+.nav-main {
+    &__link {
+        font: {
+            family: $primery-font;
+            weight: bolder;
+        }
+
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.7);
+        margin: 10px;
+        text-transform: uppercase;
+
+        &:hover {
+            text-shadow: 2px 2px 3px $white;
+        }
+    }
+}

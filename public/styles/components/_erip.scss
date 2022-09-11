@@ -1,0 +1,20 @@
+.erip {
+    &__image {
+        width: 80px;
+        height: 60px;
+    }
+
+    .griffins__image {
+        width: 70px;
+        height: 60px;
+        margin-left: 40px;
+    }
+
+    &__text {
+        font: {
+            family: $primery-font;
+            size: 20px;
+        }
+        color: $white;
+    }
+}

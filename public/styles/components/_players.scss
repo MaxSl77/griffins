@@ -1,0 +1,60 @@
+.wrap {
+    text-align: center;
+    background-color: white;
+    max-width: 1130px;
+    padding: 0 30px;
+}
+
+.team_list {
+    display: inline-block;
+    margin: 10px 30px;
+}
+
+.personal_link {
+    text-decoration: none;
+}
+
+.goalkeeper {
+    margin-bottom: 20px;
+}
+
+.defenders {
+    margin-bottom: 20px;
+}
+
+
+.personal_image {
+    width: 130px;
+    border-radius: 50%;
+}
+
+.num {
+    background-color: #1ba2fc;
+    font-size: 20px;
+    color: #fff;
+    width: 52px;
+    height: 52px;
+    line-height: 46px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    position: relative;
+    margin: -20px 77px;
+    text-align: center;
+}
+
+.personal_heading {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px 0 0 0;
+    color: inherit;
+    letter-spacing: 0;
+}
+
+.personal_preview {
+    font-size: 18px;
+    font-weight: bold;
+    color: inherit;
+    letter-spacing: 0;
+    text-align: center;
+}

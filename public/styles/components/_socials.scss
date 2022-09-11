@@ -1,0 +1,10 @@
+.socials {
+    &__text {
+        font: {
+            family: $primery-font;
+            size: 21px;
+        }
+        color: $white;
+        text-align: center;
+    }
+}

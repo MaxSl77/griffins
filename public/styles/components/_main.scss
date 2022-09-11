@@ -1,0 +1,20 @@
+.main {
+    background-color: $dark-blue;
+
+    &__title {
+        color: $white;
+        text-align: center;
+        padding-top: 25px;
+        text-transform: uppercase;
+    }
+
+    &__line {
+        margin-top: 25px;
+        width: 7%;
+        background-color: $white;
+    }
+
+    &__wrapper {
+        width: 70%;
+    }
+}

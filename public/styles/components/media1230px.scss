@@ -1,0 +1,149 @@
+.mobile__menu {
+    display: none;
+}
+
+@media screen and (max-width: 1230px) {
+    .header__wrapper {
+        display: block;
+        text-align: center;
+    }
+
+    .header__block-tagline {
+        display: none;
+    }
+
+    .header__search {
+        display: none;
+    }
+
+    .nav__separation {
+        display: none;
+    }
+
+    .navigation__block {
+        display: none;
+    }
+
+    .mobile__menu-nav-list-item {
+        font: {
+            family: $primery-font;
+            weight: bolder;
+        }
+
+        margin: 10px;
+        text-transform: uppercase;
+
+        &:hover {
+            text-shadow: 2px 2px 3px $white;
+        }
+
+    }
+
+    .mobile-menu-icon {
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: 15%;
+        top: 3%;
+    }
+
+    .mobile__menu-nav-list {
+        color: white;
+    }
+
+    .mobile-menu-icon span {
+        width: 30px;
+        height: 2px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        transition: all 0.5s;
+    }
+
+    .mobile-menu-icon span:nth-of-type(2) {
+        top: calc(50% - 5px);
+    }
+
+    .mobile-menu-icon span:nth-of-type(3) {
+        top: calc(50% + 5px);
+    }
+
+    .mobile__menu.active {
+        display: block;
+    }
+
+    .mobile-menu-icon.active span:nth-of-type(1) {
+        display: none;
+    }
+
+    .mobile-menu-icon.active span:nth-of-type(2) {
+        top: 50%;
+        transform: translate(-50%, 0%) rotate(45deg);
+    }
+
+    .mobile-menu-icon.active span:nth-of-type(3) {
+        top: 50%;
+        transform: translate(-50%, 0%) rotate(-45deg);
+    }
+
+    .mobile-menu-icon.active {
+        position: absolute;
+        display: block;
+    }
+
+    .presentation {
+        background: {
+            image: url(../Pictures/grifins.jpg);
+            size: cover;
+            repeat: repeat;
+            position: center center;
+            attachment: fixed;
+        }
+    }
+
+    .news {
+        display: block;
+        flex-direction: column;
+    }
+
+    .news__image {
+        width: 100%;
+        height: 50%;
+    }
+
+    .news__description {
+        margin: 0;
+        text-align: center;
+    }
+
+    .news__description-heading {
+        text-align: justify;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 20px;
+        transition: 0.2s;
+        color: $dark-blue;
+    }
+
+    .news__description-heading::before {
+        display: none;
+    }
+
+    .footer__wrapper {
+        display: block;
+        text-align: center;
+        flex-wrap: wrap;
+    }
+
+    .socials {
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+    }
+
+    .location {
+        margin-bottom: 20px;
+    }
+}

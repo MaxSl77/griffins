@@ -1,0 +1,11 @@
+.location {
+    &__text {
+        font: {
+            family: $primery-font;
+            size: 15px;
+        }
+        color: $white;
+        width: 60%;
+        text-align: center;
+    }
+}

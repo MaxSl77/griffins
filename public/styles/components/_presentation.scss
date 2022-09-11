@@ -1,0 +1,59 @@
+.presentation {
+    position: relative;
+
+    background: {
+        image: url(../Pictures/grifins.jpg);
+        size: cover;
+        repeat: no-repeat;
+        position: bottom 65% right 50%;
+    }
+
+    z-index: 0;
+
+    &__wrapper {
+        position: relative;
+        text-align: center;
+        color: $white;
+        z-index: 2;
+        padding: 30px;
+    }
+
+    &__heading {
+        font: {
+            size: 22px;
+            weight: bold;
+            family: $primery-font;
+        }
+
+        line-height: 1.5;
+        width: 50%;
+        padding-bottom: 30px;
+    }
+
+    &__text {
+        width: 75%;
+        padding-bottom: 30px;
+
+        font: {
+            size: 17px;
+            family: $secondary-font;
+        }
+
+        line-height: 1.5;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, .6);
+        z-index: 1;
+    }
+
+    &__invite-text {
+        text-transform: uppercase;
+    }
+}

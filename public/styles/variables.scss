@@ -1,0 +1,15 @@
+$dark-blue: #181133;
+$white: white;
+
+$primery-font: OpenSans;
+$secondary-font: Roboto;
+
+@font-face {
+    font-family: OpenSans;
+    src: url(../fonts/OpenSans/OpenSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto/Roboto-Light.ttf);
+}

@@ -1,0 +1,12 @@
+.footer {
+    & {
+        background-color: $dark-blue;
+        padding-top: 25px;
+
+        &__wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+
+    }
+}

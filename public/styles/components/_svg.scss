@@ -1,0 +1,10 @@
+.fab {
+    mask-image: $white;
+    text-decoration: none;
+    margin: 20px 30px 0 15PX;
+    
+    &:hover {
+        opacity: .5;
+        cursor: pointer;
+    }
+}

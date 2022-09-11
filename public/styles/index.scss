@@ -1,0 +1,24 @@
+@import 'variables';
+
+@import 'normalize.css';
+
+@import 'components/header';
+@import 'components/nav-main';
+@import 'components/presentation';
+@import 'components/main';
+@import 'components/news';
+@import 'components/footer';
+@import 'components/socials';
+@import 'components/location';
+@import 'components/svg';
+@import 'components/erip';
+@import "components/players";
+@import 'components/media1230px';
+
+
+* {
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
