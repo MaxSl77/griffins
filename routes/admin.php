@@ -17,7 +17,7 @@ Route::middleware("auth:admin")->group(function() {
     Route::resource('players', \App\Http\Controllers\Admin\PlayerController::class);
 //    Route::resource('photos', \App\Http\Controllers\Admin\PhotoController::class);
     Route::resource('timetables', \App\Http\Controllers\Admin\TimetableController::class);
-
+    Route::resource('attributes', \App\Http\Controllers\Admin\AttributeController::class);
 });
 
 

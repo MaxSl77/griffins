@@ -16,6 +16,11 @@ class Attributes extends Migration
         Schema::create('attributes', function (Blueprint $table) {
             $table->id();
             $table->string("title");
+//            $table->text("preview");
+            $table->text("price");
+            $table->text("thumbnail")->nullable();
+            $table->text("category");
+
             $table->timestamps();
         });
     }

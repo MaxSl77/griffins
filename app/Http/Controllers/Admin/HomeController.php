@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\AdminUser;
+use App\Models\Attribute;
 use App\Models\Coach;
 use App\Models\Photo;
 use App\Models\Player;
@@ -19,6 +20,7 @@ class HomeController extends Controller
         $coaches = Coach::all()->count();
         $adminuser = AdminUser::all()->count();
         $players = Player::all()->count();
+        $attributes = Attribute::all()->count();
         $photos = Photo::all()->count();
         $timetables = Timetable::all()->count();
 
@@ -27,6 +29,7 @@ class HomeController extends Controller
             "coaches" => $coaches,
             "adminuser" => $adminuser,
             "players" => $players,
+            "attributes" => $attributes,
             "photos" => $photos,
             "timetables" => $timetables,
         ]);

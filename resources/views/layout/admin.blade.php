@@ -219,6 +219,29 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{route('admin.attributes.index')}}" class="nav-link">
+                            <i class="nav-icon fas fa-calendar-times"></i>
+                            <p>
+                                Атрибутика
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('admin.attributes.index')}}" class="nav-link">
+                                    <p>Атрибутика</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('admin.attributes.create')}}" class="nav-link">
+                                    <p>Добавить</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

@@ -26,6 +26,7 @@ Route::prefix('players')->group(function () {
 
 Route::prefix('attributes')->group(function () {
     Route::get('/', [\App\Http\Controllers\AttributesController::class, 'index'])->name('attributes');
+    Route::get('/{id}', [\App\Http\Controllers\AttributesController::class, 'show'])->name('attributes.show');
 });
 
 //Route::prefix('photos')->group(function () {

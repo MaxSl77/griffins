@@ -52,8 +52,10 @@ class IndexController extends Controller
         $attributes = Attribute::where(DB::raw('title'), 'LIKE', "%{$search}%")->get();
         $coaches = Coach::where(DB::raw('title'), 'LIKE', "%{$search}%")->orWhere('preview', 'LIKE', "%{$search}%")->orWhere('description', 'LIKE', "%{$search}%")->get();
         $players = Player::where(DB::raw('title'), 'LIKE', "%{$search}%")->orWhere('preview', 'LIKE', "%{$search}%")->orWhere('number', 'LIKE', "%{$search}%")->orWhere('position', 'LIKE', "%{$search}%")->get();
-        $photos = Photo::where(DB::raw('title'), 'LIKE', "%{$search}%")->orWhere('preview', 'LIKE', "%{$search}%")->get();
-        return view('search', ['search' => $search])->with('posts', $posts)->with('coaches', $coaches)->with('players', $players)->with('attributes', $attributes)->with('photos', $photos);
+//        $photos = Photo::where(DB::raw('title'), 'LIKE', "%{$search}%")->orWhere('preview', 'LIKE', "%{$search}%")->get();
+        return view('search', ['search' => $search])->with('posts', $posts)->with('coaches', $coaches)->with('players', $players)->with('attributes', $attributes)
+//            ->with('photos', $photos)
+            ;
     }
 
     public function showContactForm()

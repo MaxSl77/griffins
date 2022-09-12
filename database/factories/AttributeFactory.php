@@ -22,7 +22,11 @@ class AttributeFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->text(),
+            "title" => $this->faker->name(),
+            "price" => rand(1, 100),
+//            "preview" => $this->faker->text(50),
+            "thumbnail" => $this->faker->image(storage_path('app/public/uploads'), 230, 350, null, false),
+            "category" => $this->faker->text(),
             ];
     }
 }

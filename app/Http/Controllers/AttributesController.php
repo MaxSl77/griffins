@@ -15,4 +15,13 @@ class AttributesController extends Controller
             'attributes' => $attributes
         ]);
     }
+
+    public function show($id)
+    {
+        $attribute = Attribute::findOrFail($id);
+
+        return view('attributes.show', [
+            "attribute" => $attribute,
+        ]);
+    }
 }

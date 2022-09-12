@@ -23,7 +23,7 @@
                                              alt="Вратарь">
                                         <div class="num">{{$player->number}}</div>
                                         <h5 class="personal_heading">{{$player->title}}</h5>
-                                        <p class="personal_preview">{{$player->preview}}</p>
+{{--                                        <p class="personal_preview">{{$player->preview}}</p>--}}
                                     </a>
                                 </div>
                             @endif
@@ -40,7 +40,7 @@
                                              alt="Защитник">
                                         <div class="num">{{$player->number}}</div>
                                         <h5 class="personal_heading">{{$player->title}}</h5>
-                                        <p class="personal_preview">{{$player->preview}}</p>
+{{--                                        <p class="personal_preview">{{$player->preview}}</p>--}}
                                     </a>
                                 </div>
                             @endif
@@ -57,7 +57,7 @@
                                              alt="Нападающий">
                                         <div class="num">{{$player->number}}</div>
                                         <h5 class="personal_heading">{{$player->title}}</h5>
-                                        <p class="personal_preview">{{$player->preview}}</p>
+{{--                                        <p class="personal_preview">{{$player->preview}}</p>--}}
                                     </a>
                                 </div>
                             @endif

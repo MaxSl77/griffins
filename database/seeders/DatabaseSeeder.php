@@ -34,8 +34,6 @@ class DatabaseSeeder extends Seeder
 
         Player::factory(10)->create();
 
-        Attribute::factory(1)->create([
-            "title" => 'Раздел находится в разработке'
-        ]);
+        Attribute::factory(10)->create();
     }
 }

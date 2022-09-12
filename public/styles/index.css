@@ -450,7 +450,7 @@
 }
 
 .decor {
-    max-width: 50%;
+    max-width: 70%;
     margin: 20px auto;
     background: white;
     border-radius: 30px;
@@ -593,6 +593,26 @@
 }
 .popular-brends-grid img:hover {
     opacity: .4;
+}
+
+.number {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 0;
+}
+
+.personal_heading-info {
+    font-size: 32px;
+    font-weight: bold;
+    padding: 20px 0 0 0;
+    color: white;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.contact-formWrapper {
+    display: flex;
 }
 
 @media (max-width: 1023px) {
