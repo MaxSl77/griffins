@@ -2,19 +2,19 @@
 
 namespace App\Models;
 
+use App\Models\Photo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Photo;
 
 class Image extends Model
 {
-//    use HasFactory;
-//    protected $fillable = [
-//        'image',
-//        'photo_id'
-//    ];
-//
-//    public function photos() {
-//        return $this->belongsTo(Photo::class);
-//    }
+    use HasFactory;
+    protected $fillable=[
+        'image',
+        'post_id',
+    ];
+
+    public function photos() {
+        return $this->belongsTo(Photo::class);
+    }
 }

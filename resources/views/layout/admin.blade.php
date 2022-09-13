@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Админ-панель - @yield('title')</title>
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- Font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -173,29 +179,29 @@
                             </li>
                         </ul>
                     </li>
-{{--                    <li class="nav-item">--}}
-{{--                        <a href="{{route('admin.photos.index')}}" class="nav-link">--}}
-{{--                            <i class="nav-icon fas fa-photo-video"></i>--}}
-{{--                            <p>--}}
-{{--                                Фотографии--}}
-{{--                                <i class="right fas fa-angle-left"></i>--}}
-{{--                            </p>--}}
-{{--                        </a>--}}
-{{--                        <ul class="nav nav-treeview">--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="{{route('admin.photos.index')}}" class="nav-link">--}}
-{{--                                    <p>Все фотографии</p>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                        </ul>--}}
-{{--                        <ul class="nav nav-treeview">--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="{{route('admin.photos.create')}}" class="nav-link">--}}
-{{--                                    <p>Добавить</p>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                        </ul>--}}
-{{--                    </li>--}}
+                    <li class="nav-item">
+                        <a href="{{route('admin.photos.index')}}" class="nav-link">
+                            <i class="nav-icon fas fa-photo-video"></i>
+                            <p>
+                                Фотографии
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('admin.photos.index')}}" class="nav-link">
+                                    <p>Все фотографии</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('admin.photos.create')}}" class="nav-link">
+                                    <p>Добавить</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="nav-item">
                         <a href="{{route('admin.timetables.index')}}" class="nav-link">
                             <i class="nav-icon fas fa-calendar-times"></i>
@@ -230,7 +236,7 @@
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{route('admin.attributes.index')}}" class="nav-link">
-                                    <p>Атрибутика</p>
+                                    <p>Вся атрибутика</p>
                                 </a>
                             </li>
                         </ul>

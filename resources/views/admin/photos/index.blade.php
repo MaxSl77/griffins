@@ -16,6 +16,12 @@
                     <th>
                         Название
                     </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Cover
+                    </th>
                     <th style="width: 30%">
                     </th>
                 </tr>
@@ -29,6 +35,12 @@
                             </td>
                             <td>
                                 {{$photo->title}}
+                            </td>
+                            <td>
+                                {{$photo->body}}
+                            </td>
+                            <td>
+                                <img src="{{$photo->cover}}" class="img-responsive" style="max-height: 100px; max-width: 100px" alt="" srcset="">
                             </td>
                             <td class="project-actions text-right">
                                 <a class="btn btn-info btn-sm" href="{{route('admin.photos.edit', $photo->id)}}">
