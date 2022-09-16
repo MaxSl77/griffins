@@ -15,14 +15,11 @@ Route::middleware("auth:admin")->group(function() {
     Route::resource('posts', \App\Http\Controllers\Admin\PostController::class);
     Route::resource('coaches', \App\Http\Controllers\Admin\CoachController::class);
     Route::resource('players', \App\Http\Controllers\Admin\PlayerController::class);
-//    Route::resource('photos', \App\Http\Controllers\Admin\PhotoController::class);
+    Route::resource('album', \App\Http\Controllers\Admin\AlbumController::class);
     Route::resource('timetables', \App\Http\Controllers\Admin\TimetableController::class);
     Route::resource('attributes', \App\Http\Controllers\Admin\AttributeController::class);
-    Route::get('album', [\App\Http\Controllers\Admin\AlbumController::class, 'index']);
-    Route::get('album/create', function () {
-    return view('admin.album.create');
-    });
-    Route::post('album/post', [\App\Http\Controllers\Admin\AlbumController::class, 'store']);
+//    Route::delete('/deletePhoto/{id}', [\App\Http\Controllers\Admin\AlbumController::class, 'deletePhoto'])->name('admin.deletePhoto');
+//    Route::delete('/deleteThumbnail/{id}', [\App\Http\Controllers\Admin\AlbumController::class, 'deleteThumbnail'])->name('admin.deleteThumbnail');
 });
 
 

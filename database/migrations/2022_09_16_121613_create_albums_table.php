@@ -18,7 +18,7 @@ class CreateAlbumsTable extends Migration
             $table->string('author');
             $table->string('title');
             $table->text('body');
-            $table->text('thumbnail');
+            $table->text('thumbnail')->nullable();
             $table->timestamps();
         });
     }
