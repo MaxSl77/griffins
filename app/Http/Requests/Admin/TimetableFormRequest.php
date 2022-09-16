@@ -16,12 +16,13 @@ class TimetableFormRequest extends FormRequest
     {
         return [
             'start_at' => 'required',
-            'day_of_the_week' => 'required|string',
-            'time' => ['required'],
-            'place' => ['string'],
-            'type' => ['string'],
-            'teams' => ['required'],
-            'locker_room' => ['integer'],
+            "thumbnail" => ["image"],
+//            'day_of_the_week' => 'required|string',
+//            'time' => ['required'],
+//            'place' => ['string'],
+//            'type' => ['string'],
+//            'teams' => ['required'],
+//            'locker_room' => ['integer'],
         ];
     }
 }

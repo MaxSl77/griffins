@@ -21,7 +21,7 @@ class HomeController extends Controller
         $adminuser = AdminUser::all()->count();
         $players = Player::all()->count();
         $attributes = Attribute::all()->count();
-        $photos = Photo::all()->count();
+//        $photos = Photo::all()->count();
         $timetables = Timetable::all()->count();
 
         return view("admin.home", [
@@ -30,7 +30,7 @@ class HomeController extends Controller
             "adminuser" => $adminuser,
             "players" => $players,
             "attributes" => $attributes,
-            "photos" => $photos,
+//            "photos" => $photos,
             "timetables" => $timetables,
         ]);
     }

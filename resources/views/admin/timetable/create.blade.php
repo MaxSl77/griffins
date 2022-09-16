@@ -13,67 +13,80 @@
         @endif
 
         <div class="form-group">
-            <input type="date" class="form-control" name="start_at"
+            <input type="text" class="form-control" name="start_at"
                    placeholder="Дата" value="{{ $timetable->start_at ?? '' }}">
 
             @error('start_at')
             <p class="text-red-500">{{$message}}</p>
             @enderror
         </div>
+
+        @if(isset($timetable) && $timetable->thumbnail)
+            <div class="form-group">
+                <img class="img-size-128" style="max-width: 320px; max-height: 450px" src="{{asset('/storage/'.$timetable->thumbnail)}}">
+            </div>
+        @endif
         <div class="form-group">
+            <input type="file" class="form-control-file" name="thumbnail">
+
+            @error('thumbnail')
+            <p class="text-red-500">{{$message}}</p>
+            @enderror
+        </div>
+{{--        <div class="form-group">--}}
 {{--            <input type="text" class="form-control" name="day_of_the_week"--}}
 {{--                   placeholder="День" value="{{ $timetable->day_of_the_week ?? '' }}">--}}
-            <select type="text" class="form-control" name="day_of_the_week"
-                    value="{{ $timetable->day_of_the_week ?? '' }}">
-                <option selected>Понедельник</option>
-                <option>Вторник</option>
-                <option>Среда</option>
-                <option>Четверг</option>
-                <option>Пятница</option>
-                <option>Суббота</option>
-                <option>Воскресенье</option>
-            </select>
+{{--            <select type="text" class="form-control" name="day_of_the_week"--}}
+{{--                    value="{{ $timetable->day_of_the_week ?? '' }}">--}}
+{{--                <option selected>Понедельник</option>--}}
+{{--                <option>Вторник</option>--}}
+{{--                <option>Среда</option>--}}
+{{--                <option>Четверг</option>--}}
+{{--                <option>Пятница</option>--}}
+{{--                <option>Суббота</option>--}}
+{{--                <option>Воскресенье</option>--}}
+{{--            </select>--}}
 
 
-            @error('day_of_the_week')
-            <p class="text-red-500">{{$message}}</p>
-            @enderror
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" name="time"
-                   placeholder="Время" value="{{ $timetable->time ?? '' }}">
-            @error('time')
-            <p class="text-red-500">{{$message}}</p>
-            @enderror
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" name="place"
-                   placeholder="Место" value="{{ $timetable->place ?? '' }}">
-            @error('description')
-            <p class="text-red-500">{{$message}}</p>
-            @enderror
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" name="type"
-                   placeholder="Тип" value="{{ $timetable->type ?? '' }}">
-            @error('type')
-            <p class="text-red-500">{{$message}}</p>
-            @enderror
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" name="locker_room"
-                   placeholder="Раздевалка" value="{{ $timetable->locker_room ?? '' }}">
-            @error('locker_room')
-            <p class="text-red-500">{{$message}}</p>
-            @enderror
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" name="teams"
-                   placeholder="Команда" value="{{ $timetable->teams ?? '' }}">
-            @error('teams')
-            <p class="text-red-500">{{$message}}</p>
-            @enderror
-        </div>
+{{--            @error('day_of_the_week')--}}
+{{--            <p class="text-red-500">{{$message}}</p>--}}
+{{--            @enderror--}}
+{{--        </div>--}}
+{{--        <div class="form-group">--}}
+{{--            <input type="text" class="form-control" name="time"--}}
+{{--                   placeholder="Время" value="{{ $timetable->time ?? '' }}">--}}
+{{--            @error('time')--}}
+{{--            <p class="text-red-500">{{$message}}</p>--}}
+{{--            @enderror--}}
+{{--        </div>--}}
+{{--        <div class="form-group">--}}
+{{--            <input type="text" class="form-control" name="place"--}}
+{{--                   placeholder="Место" value="{{ $timetable->place ?? '' }}">--}}
+{{--            @error('description')--}}
+{{--            <p class="text-red-500">{{$message}}</p>--}}
+{{--            @enderror--}}
+{{--        </div>--}}
+{{--        <div class="form-group">--}}
+{{--            <input type="text" class="form-control" name="type"--}}
+{{--                   placeholder="Тип" value="{{ $timetable->type ?? '' }}">--}}
+{{--            @error('type')--}}
+{{--            <p class="text-red-500">{{$message}}</p>--}}
+{{--            @enderror--}}
+{{--        </div>--}}
+{{--        <div class="form-group">--}}
+{{--            <input type="text" class="form-control" name="locker_room"--}}
+{{--                   placeholder="Раздевалка" value="{{ $timetable->locker_room ?? '' }}">--}}
+{{--            @error('locker_room')--}}
+{{--            <p class="text-red-500">{{$message}}</p>--}}
+{{--            @enderror--}}
+{{--        </div>--}}
+{{--        <div class="form-group">--}}
+{{--            <input type="text" class="form-control" name="teams"--}}
+{{--                   placeholder="Команда" value="{{ $timetable->teams ?? '' }}">--}}
+{{--            @error('teams')--}}
+{{--            <p class="text-red-500">{{$message}}</p>--}}
+{{--            @enderror--}}
+{{--        </div>--}}
 
 {{--            <div class="form-group">--}}
 {{--                <img class="img-size-128" style="max-width: 320px; max-height: 450px" src="{{asset('/storage/'.$team->logo)}}">--}}

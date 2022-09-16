@@ -15,19 +15,9 @@ Route::middleware("auth:admin")->group(function() {
     Route::resource('posts', \App\Http\Controllers\Admin\PostController::class);
     Route::resource('coaches', \App\Http\Controllers\Admin\CoachController::class);
     Route::resource('players', \App\Http\Controllers\Admin\PlayerController::class);
-    Route::resource('photos', \App\Http\Controllers\Admin\PhotoController::class);
+//    Route::resource('photos', \App\Http\Controllers\Admin\PhotoController::class);
     Route::resource('timetables', \App\Http\Controllers\Admin\TimetableController::class);
     Route::resource('attributes', \App\Http\Controllers\Admin\AttributeController::class);
-//    Route::get('/photos', [\App\Http\Controllers\Admin\PhotoController::class, 'index']);
-//    Route::get('/create_photos', function () {
-//        return view('admin.photos.create');
-//    });
-//    Route::post('/photos_store', [\App\Http\Controllers\Admin\PhotoController::class, 'store']);
-//    Route::delete("/delete/{id}", [\App\Http\Controllers\Admin\PhotoController::class, 'destroy']);
-//    Route::get("/edit/{id}", [\App\Http\Controllers\Admin\PhotoController::class, 'edit']);
-    Route::delete("/deleteimage/{id}", [\App\Http\Controllers\Admin\PhotoController::class, 'deleteimage']);
-    Route::delete("/deletecover/{id}", [\App\Http\Controllers\Admin\PhotoController::class, 'deletecover']);
-//    Route::delete("/update/{id}", [\App\Http\Controllers\Admin\PhotoController::class, 'update']);
 });
 
 

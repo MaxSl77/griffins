@@ -11,13 +11,14 @@ class CreateTimetablesTable extends Migration
     {
         Schema::create('timetables', function (Blueprint $table) {
             $table->id();
-            $table->date('start_at');
-            $table->string('day_of_the_week');
-            $table->time('time');
-            $table->string('place');
-            $table->string('type');
-            $table->string('teams');
-            $table->integer('locker_room')->nullable();
+            $table->text('start_at');
+            $table->text("thumbnail")->nullable();
+//            $table->string('day_of_the_week');
+//            $table->time('time');
+//            $table->string('place');
+//            $table->string('type');
+//            $table->string('teams');
+//            $table->integer('locker_room')->nullable();
             $table->timestamps();
         });
     }

@@ -615,10 +615,21 @@
     display: flex;
 }
 
+.timetable-image {
+    display: flex;
+    padding: 20px 0;
+    width: 80%;
+    height: 80%;
+}
+
 @media (max-width: 1023px) {
     .bform .contact-form {
         padding-left: 0;
         padding-right: 0;
+    }
+
+    .timetable-image {
+        width: 100%;
     }
 }
 
