@@ -18,8 +18,12 @@ Route::middleware("auth:admin")->group(function() {
 //    Route::resource('photos', \App\Http\Controllers\Admin\PhotoController::class);
     Route::resource('timetables', \App\Http\Controllers\Admin\TimetableController::class);
     Route::resource('attributes', \App\Http\Controllers\Admin\AttributeController::class);
+    Route::get('album', [\App\Http\Controllers\Admin\AlbumController::class, 'index']);
+    Route::get('album/create', function () {
+    return view('admin.album.create');
+    });
+    Route::post('album/post', [\App\Http\Controllers\Admin\AlbumController::class, 'store']);
 });
-
 
 
 
