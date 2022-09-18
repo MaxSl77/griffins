@@ -29,10 +29,10 @@ Route::prefix('attributes')->group(function () {
     Route::get('/{id}', [\App\Http\Controllers\AttributesController::class, 'show'])->name('attributes.show');
 });
 
-//Route::prefix('photos')->group(function () {
-//    Route::get('/', [\App\Http\Controllers\PhotoController::class, 'index'])->name('photos');
-//    Route::get('/{id}', [\App\Http\Controllers\PhotoController::class, 'show'])->name('photos.show');
-//});
+Route::prefix('albums')->group(function () {
+    Route::get('/', [\App\Http\Controllers\AlbumController::class, 'index'])->name('albums');
+    Route::get('/{id}', [\App\Http\Controllers\AlbumController::class, 'show'])->name('albums.show');
+});
 
 Route::prefix('timetable')->group(function () {
     Route::get('/', [\App\Http\Controllers\TimetableController::class, 'index'])->name('timetable');

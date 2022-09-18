@@ -21,9 +21,9 @@
             @foreach($attributes as $attribute)
                 @include('attributes.index', ['attribute'=>$attribute])
             @endforeach
-{{--            @foreach($photos as $photo)--}}
-{{--                @include('photos.index', ['photo'=>$photo])--}}
-{{--            @endforeach--}}
+            @foreach($albums as $album)
+                @include('albums.index', ['album'=>$album])
+            @endforeach
         </div>
     </section>
 

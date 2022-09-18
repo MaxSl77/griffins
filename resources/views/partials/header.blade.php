@@ -73,7 +73,7 @@
                         <li class="mobile__menu-nav-list-item"><a class="nav-main__link" href="{{route('coaches')}}">тренеры</a></li>
                         <li class="mobile__menu-nav-list-item"><a class="nav-main__link" href="{{route('players')}}">команда</a></li>
                         <li class="mobile__menu-nav-list-item"><a class="nav-main__link" href="{{route('timetable')}}">расписание</a></li>
-                        <li class="mobile__menu-nav-list-item"><a class="nav-main__link" href="#">фото</a></li>
+                        <li class="mobile__menu-nav-list-item"><a class="nav-main__link" href="{{route('albums')}}">фото</a></li>
                         <li class="mobile__menu-nav-list-item"><a class="nav-main__link" href="{{route('attributes')}}">атрибутика</a></li>
                         <li class="mobile__menu-nav-list-item"><a class="nav-main__link" href="{{route('erip')}}">оплата по ерип</a></li>
                         <li class="mobile__menu-nav-list-item"><a class="nav-main__link" href="{{route('contacts')}}">контакты</a></li>
@@ -93,7 +93,7 @@
                     <a class="nav-main__link" href="{{route('coaches')}}">тренеры</a>
                     <a class="nav-main__link" href="{{route('players')}}">команда</a>
                     <a class="nav-main__link" href="{{route('timetable')}}">расписание</a>
-                    <a class="nav-main__link" href="#">фото</a>
+                    <a class="nav-main__link" href="{{route('albums')}}">фото</a>
                     <a class="nav-main__link" href="{{route('attributes')}}">атрибутика</a>
                     <a class="nav-main__link" href="{{route('erip')}}">оплата по ерип</a>
                     <a class="nav-main__link" href="{{route('contacts')}}">контакты</a>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactFormRequest;
 use App\Mail\ContactForm;
+use App\Models\Album;
 use App\Models\Attribute;
 use App\Models\Coach;
 use App\Models\Photo;
@@ -49,12 +50,12 @@ class IndexController extends Controller
         }
 
         $posts = Post::where(DB::raw('title'), 'LIKE', "%{$search}%")->orWhere('preview', 'LIKE', "%{$search}%")->orWhere('description', 'LIKE', "%{$search}%")->get();
-        $attributes = Attribute::where(DB::raw('title'), 'LIKE', "%{$search}%")->get();
+        $attributes = Attribute::where(DB::raw('title'), 'LIKE', "%{$search}%")->orWhere('price', 'LIKE', "%{$search}%")->get();
         $coaches = Coach::where(DB::raw('title'), 'LIKE', "%{$search}%")->orWhere('preview', 'LIKE', "%{$search}%")->orWhere('description', 'LIKE', "%{$search}%")->get();
         $players = Player::where(DB::raw('title'), 'LIKE', "%{$search}%")->orWhere('preview', 'LIKE', "%{$search}%")->orWhere('number', 'LIKE', "%{$search}%")->orWhere('position', 'LIKE', "%{$search}%")->get();
-//        $photos = Photo::where(DB::raw('title'), 'LIKE', "%{$search}%")->orWhere('preview', 'LIKE', "%{$search}%")->get();
+        $albums = Album::where(DB::raw('title'), 'LIKE', "%{$search}%")->orWhere('body', 'LIKE', "%{$search}%")->get();
         return view('search', ['search' => $search])->with('posts', $posts)->with('coaches', $coaches)->with('players', $players)->with('attributes', $attributes)
-//            ->with('photos', $photos)
+            ->with('albums', $albums)
             ;
     }
 
