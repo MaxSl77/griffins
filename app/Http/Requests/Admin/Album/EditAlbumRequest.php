@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Admin;
+namespace App\Http\Requests\Admin\Album;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AlbumFormRequest extends FormRequest
+class EditAlbumRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,7 @@ class AlbumFormRequest extends FormRequest
     public function rules()
     {
         return [
-            "title" => 'required',
-            "author" => 'required',
-            "body" => 'required',
-            "thumbnail" => 'required|image',
-            'images' => 'required|array',
+            //
         ];
     }
 }

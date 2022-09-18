@@ -22,8 +22,8 @@ class HomeController extends Controller
         $adminuser = AdminUser::all()->count();
         $players = Player::all()->count();
         $attributes = Attribute::all()->count();
-        $albums = Album::all()->count();
         $timetables = Timetable::all()->count();
+        $albums = Album::all()->count();
 
         return view("admin.home", [
             "posts" => $posts,
@@ -31,8 +31,8 @@ class HomeController extends Controller
             "adminuser" => $adminuser,
             "players" => $players,
             "attributes" => $attributes,
-            "albums" => $albums,
             "timetables" => $timetables,
+            "albums" => $albums,
         ]);
     }
 }

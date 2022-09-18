@@ -92,7 +92,7 @@
                         <div class="icon">
                             <i class="fas fa-photo-video"></i>
                         </div>
-                        <a href="{{ route('admin.album.index') }}" class="small-box-footer">Все фотографии <i
+                        <a href="{{ route('admin.albums.index') }}" class="small-box-footer">Все фотографии <i
                                 class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
