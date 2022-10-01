@@ -5,163 +5,1692 @@
 @section('content')
     @include('partials.header')
 
-{{--    <style>--}}
-{{--        .wrap {--}}
-{{--            padding: 0 0;--}}
-{{--        }--}}
-{{--        .table-container {--}}
-{{--            display: flex;--}}
-{{--            justify-content: center;--}}
-{{--            width: 100%;--}}
-{{--            background-color: #fff;--}}
-{{--            border-radius: 10px;--}}
-{{--            padding: 5px;--}}
-{{--        }--}}
-
-{{--        table {--}}
-{{--            width: 100%;--}}
-{{--            border-collapse: collapse;--}}
-{{--        }--}}
-
-{{--        tr:nth-of-type(odd) {--}}
-{{--            background-color: #181133;--}}
-{{--            color: #fff;--}}
-{{--        }--}}
-
-{{--        tr:nth-of-type(even) {--}}
-{{--            background-color: #fff;--}}
-{{--            color: #333;--}}
-{{--        }--}}
-
-{{--        th {--}}
-{{--            background-color: #Dc005A;--}}
-{{--            color: #fff;--}}
-{{--            font-weight: 800;--}}
-{{--            font-size: 20px;--}}
-{{--        }--}}
-
-{{--        td, th {--}}
-{{--            padding: 12px;--}}
-{{--            border: 1px solid #ccc;--}}
-{{--            text-align: center;--}}
-{{--        }--}}
-
-
-{{--        @media only screen and (max-width: 768px),--}}
-{{--        (min-device-width: 768px) and (max-device-width: 992px) {--}}
-{{--            .table-container {--}}
-{{--                width: 100%;--}}
-{{--                background: transparent;--}}
-{{--            }--}}
-
-{{--            table,--}}
-{{--            thead,--}}
-{{--            tbody,--}}
-{{--            th,--}}
-{{--            td,--}}
-{{--            tr {--}}
-{{--                display: block;--}}
-{{--            }--}}
-
-{{--            thead {--}}
-{{--                display: none;--}}
-{{--            }--}}
-
-{{--            tr {--}}
-{{--                border: 1px solid #ccc;--}}
-{{--                margin-bottom: 10px;--}}
-{{--            }--}}
-
-{{--            td {--}}
-{{--                border: none;--}}
-{{--                border-bottom: 1px solid #eee;--}}
-{{--                position: relative;--}}
-{{--                /*padding-left: 50%;*/--}}
-{{--                text-align: center;--}}
-{{--            }--}}
-
-{{--            td::before {--}}
-{{--                /*position: absolute;*/--}}
-{{--                /*top: 6px;*/--}}
-{{--                /*left: 6px;*/--}}
-{{--                /*width: 45%;*/--}}
-{{--                padding-right: 10px;--}}
-{{--                /*white-space: nowrap;*/--}}
-{{--                font-size: 16px;--}}
-{{--                font-weight: 600;--}}
-{{--                /*text-align: left;*/--}}
-{{--            }--}}
-
-{{--            td:nth-of-type(1)::before {--}}
-{{--                content: "Date :";--}}
-{{--            }--}}
-
-{{--            td:nth-of-type(2)::before {--}}
-{{--                content: "Day :";--}}
-{{--            }--}}
-
-{{--            td:nth-of-type(3)::before {--}}
-{{--                content: "Time :";--}}
-{{--            }--}}
-
-{{--            td:nth-of-type(4)::before {--}}
-{{--                content: "Place :";--}}
-{{--            }--}}
-
-{{--            td:nth-of-type(5)::before {--}}
-{{--                content: "Champ/Train :";--}}
-{{--            }--}}
-
-{{--            td:nth-of-type(6)::before {--}}
-{{--                content: "Teams :";--}}
-{{--            }--}}
-
-{{--            td:nth-of-type(7)::before {--}}
-{{--                content: "Lock room :";--}}
-{{--            }--}}
-{{--        }--}}
-
-{{--    </style>--}}
-
     <section class="main">
-        <h2 class="main__title">расписание</h2>
+        <h2 class="main__title">Команда</h2>
         <hr class="main__line">
         <div class="main__wrapper">
-{{--            <div class="wrap">--}}
-{{--                <div class="personal">--}}
-                    @foreach($timetables as $timetable)
-                        <img src="{{asset('/storage/'.$timetable->thumbnail)}}" alt="griffins" class="timetable-image" />
-                    @endforeach
-{{--                    <div class="table-container">--}}
-{{--                        <table class="table">--}}
-{{--                            <thead>--}}
-{{--                            <tr class="table-columnName">--}}
-{{--                                <th class="table-column">Date</th>--}}
-{{--                                <th class="table-column">Day</th>--}}
-{{--                                <th class="table-column">Time</th>--}}
-{{--                                <th class="table-column">Place</th>--}}
-{{--                                <th class="table-column">Champ/Train</th>--}}
-{{--                                <th class="table-column">Teams</th>--}}
-{{--                                <th class="table-column">Locker room</th>--}}
-{{--                            </tr>--}}
-{{--                            </thead>--}}
-{{--                            @foreach($timetables as $timetable)--}}
-{{--                                <tbody>--}}
-{{--                                <tr class="table-stringName">--}}
-{{--                                    <td class="table-string">{{$timetable->start_at}}</td>--}}
-{{--                                    <td class="table-string">{{$timetable->day_of_the_week}}</td>--}}
-{{--                                    <td class="table-string">{{$timetable->time}}</td>--}}
-{{--                                    <td class="table-string">{{$timetable->place}}</td>--}}
-{{--                                    <td class="table-string">{{$timetable->type}}</td>--}}
-{{--                                    <td class="table-string">{{$timetable->teams}}</td>--}}
-{{--                                    <td class="table-string">{{$timetable->locker_room}}</td>--}}
-{{--                                </tr>--}}
-{{--                                </tbody>--}}
-{{--                            @endforeach--}}
-{{--                        </table>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+            <div class="wrap">
+                <table class="calendar-table">
+                    <tbody>
+                    <tr>
+                        <th colspan="7" class="month-wrapper"><span class="month">Сентябрь</span></th>
+                    </tr>
+                    <tr class="day-line">
+                        <th class="day-wrapper"><span class="day">Понедельник</span></th>
+                        <th class="day-wrapper"><span class="day">Вторник</span></th>
+                        <th class="day-wrapper"><span class="day">Среда</span></th>
+                        <th class="day-wrapper"><span class="day">Четверг</span></th>
+                        <th class="day-wrapper"><span class="day">Пятница</span></th>
+                        <th class="day-wrapper weekand"><span class="day">Суббота</span></th>
+                        <th class="day-wrapper weekand"><span class="day">Воскресенье</span></th>
+                    </tr>
+                    <tr class="date-line">
+                        <th class="date-wrapper"><span class="date">1</span></th>
+                        <th class="date-wrapper"><span class="date">2</span></th>
+                        <th class="date-wrapper"><span class="date">3</span></th>
+                        <th class="date-wrapper"><span class="date">4</span></th>
+                        <th class="date-wrapper"><span class="date">5</span></th>
+                        <th class="date-wrapper weekend"><span class="date">6</span></th>
+                        <th class="date-wrapper weekend"><span class="date">7</span></th>
+                    </tr>
+                    <tr>
+                        <td class="weekday-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekday-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekday-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekday-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekday-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekend-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekend-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr class="date-line">
+                        <th class="date-wrapper"><span class="date">8</span></th>
+                        <th class="date-wrapper"><span class="date">9</span></th>
+                        <th class="date-wrapper"><span class="date">10</span></th>
+                        <th class="date-wrapper"><span class="date">11</span></th>
+                        <th class="date-wrapper"><span class="date">12</span></th>
+                        <th class="date-wrapper weekend"><span class="date">13</span></th>
+                        <th class="date-wrapper weekend"><span class="date">14</span></th>
+                    </tr>
+                    <tr>
+                        <td class="weekday-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekday-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekday-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekday-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekday-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekend-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekend-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr class="date-line">
+                        <th class="date-wrapper"><span class="date">15</span></th>
+                        <th class="date-wrapper"><span class="date">16</span></th>
+                        <th class="date-wrapper"><span class="date">17</span></th>
+                        <th class="date-wrapper"><span class="date">18</span></th>
+                        <th class="date-wrapper"><span class="date">19</span></th>
+                        <th class="date-wrapper weekend"><span class="date">20</span></th>
+                        <th class="date-wrapper weekend"><span class="date">21</span></th>
+                    </tr>
+                    <tr>
+                        <td class="weekday-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekday-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekday-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekday-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekday-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekend-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekend-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr class="date-line">
+                        <th class="date-wrapper"><span class="date">22</span></th>
+                        <th class="date-wrapper"><span class="date">23</span></th>
+                        <th class="date-wrapper"><span class="date">24</span></th>
+                        <th class="date-wrapper"><span class="date">25</span></th>
+                        <th class="date-wrapper"><span class="date">26</span></th>
+                        <th class="date-wrapper weekend"><span class="date">27</span></th>
+                        <th class="date-wrapper weekend"><span class="date">28</span></th>
+                    </tr>
+                    <tr>
+                        <td class="weekday-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekday-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekday-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekday-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekday-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekend-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekend-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr class="date-line">
+                        <th class="date-wrapper"><span class="date">29</span></th>
+                        <th class="date-wrapper"><span class="date">30</span></th>
+                        <th class="date-wrapper"><span class="date">31</span></th>
+                        <th class="date-wrapper"><span class="date">1</span></th>
+                        <th class="date-wrapper"><span class="date">2</span></th>
+                        <th class="date-wrapper weekend"><span class="date">3</span></th>
+                        <th class="date-wrapper weekend"><span class="date">4</span></th>
+                    </tr>
+                    <tr>
+                        <td class="weekday-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekday-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekday-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekday-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekday-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekend-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="weekend-wrapper">
+                            <table>
+                                <tbody>
+                                <tr class="data-wrapper">
+                                    <td class="data">Дворец спорта</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ПСК</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Высшая лига</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">13:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Газпромбанк - Грифоны</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data" style="background-color: red; border: 1px solid red;"></td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Каролинский переулок 2а</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">ОХЛ</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">-</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">17:00</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Лесорубы - Викинги</td>
+                                </tr>
+                                <tr class="data-wrapper">
+                                    <td class="data">Разд. 119, 120</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
 

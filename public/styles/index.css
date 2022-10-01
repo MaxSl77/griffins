@@ -174,7 +174,7 @@
     display: flex;
     border: 2px solid white;
     border-radius: 30px;
-    /*flex-wrap: wrap;*/
+    flex-wrap: wrap;
     justify-content: center;
     padding: 25px 15px;
     margin: 30px 0 0 0;
@@ -584,12 +584,12 @@
 }
 
 .popular-brends-grid {
-    display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
-    padding: 50px 10px;
+    display: flex;
+    justify-content: center;
+    padding: 50px 50px;
 }
 .popular-brends-grid img {
-    width: 70%;
+    width: 100%;
 }
 .popular-brends-grid img:hover {
     opacity: .4;
@@ -621,6 +621,66 @@
     width: 80%;
     height: 80%;
 }
+
+.news__imag {
+    max-width: 400px;
+    max-height: 300px;
+    padding: 20px 10px;
+}
+
+/*Timetable*/
+.calendar-table {
+    width: 90%;
+    margin-top: 10px;
+}
+
+.month-wrapper {
+    padding: 10px;
+}
+
+.month {
+    color: white;
+    font-size: 32px;
+}
+
+.day-wrapper {
+    padding: 10px;
+}
+
+.day {
+    color: white;
+}
+
+.date-wrapper {
+    padding: 10px 0;
+    /*background-color: #181133;*/
+}
+
+.date {
+    color: white;
+}
+
+.weekend {
+    background-color: red;
+}
+
+.data-wrapper {
+    text-align: center;
+}
+
+.data {
+    color: white;
+    padding: 3px 0;
+}
+
+.weekday-wrapper {
+    border: 1px solid white;
+}
+
+.weekend-wrapper {
+    border: 1px solid red;
+}
+/*End of timetable*/
 
 @media (max-width: 1023px) {
     .bform .contact-form {

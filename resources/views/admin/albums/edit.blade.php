@@ -48,7 +48,7 @@
                             @error('title')
                             <p class="text-red-500">{{$message}}</p>
                             @enderror
-                            <input type="text" name="body" class="form-control m-2" placeholder="body" value="{{$album->title}}">
+                            <input type="text" name="body" class="form-control m-2" placeholder="body" value="{{$album->body}}">
                             @error('body')
                             <p class="text-red-500">{{$message}}</p>
                             @enderror
