@@ -644,6 +644,7 @@
 }
 
 .day-wrapper {
+    border: 1px solid white;
     padding: 10px;
 }
 
@@ -653,7 +654,7 @@
 
 .date-wrapper {
     padding: 10px 0;
-    /*background-color: #181133;*/
+    border: 1px solid white;
 }
 
 .date {
