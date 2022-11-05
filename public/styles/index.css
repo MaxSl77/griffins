@@ -682,22 +682,48 @@
     border: 1px solid red;
 }
 /*End of timetable*/
+.container {
+    padding: 10px;
+}
 
+.wrapper {
+    width: 90%;
+    height: 650px;
+    margin: 0 auto;
+}
 @media (max-width: 1023px) {
     .bform .contact-form {
         padding-left: 0;
         padding-right: 0;
     }
 
-    .timetable-image {
-        width: 100%;
+    .wrap {
+        width: 700px;
+        overflow-x: scroll;
+    }
+
+    .contact-formWrapper {
+        display: flex;
+        flex-wrap: wrap;
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 770px) {
     .bform .contact-form {
         padding-left: 15px;
         padding-right: 15px;
+    }
+
+    .wrap {
+        width: 460px;
+        overflow-x: scroll;
+    }
+}
+
+@media (max-width: 640px) {
+    .wrap {
+        width: 230px;
+        overflow-x: scroll;
     }
 }
 

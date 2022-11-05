@@ -15,14 +15,20 @@ class Timetable extends Model
     const NO_IMAGE = 'uploads/no-image.jpg';
 
     protected $fillable = [
+        'month',
+        'date',
+        'place',
+        'championship',
+        'type',
         'start_at',
-        'thumbnail',
-//        'day_of_the_week',
-//        'time',
-//        'type',
-//        'place',
-//        'teams',
-//        'locker_room',
+        'teams',
+        'locker_room',
+        'place_2',
+        'championship_2',
+        'type_2',
+        'start_at_2',
+        'teams_2',
+        'locker_room_2',
     ];
 
     public function getThumbnailAttribute($value)

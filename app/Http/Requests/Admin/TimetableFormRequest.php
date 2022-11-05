@@ -15,14 +15,20 @@ class TimetableFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'start_at' => 'required',
-            "thumbnail" => ["image"],
-//            'day_of_the_week' => 'required|string',
-//            'time' => ['required'],
-//            'place' => ['string'],
-//            'type' => ['string'],
-//            'teams' => ['required'],
-//            'locker_room' => ['integer'],
+            'month' => 'required',
+            'date' => 'required',
+            'place' => 'max:50',
+            'championship' => 'max:50',
+            'type' => 'max:50',
+            'start_at' => 'max:50',
+            'teams' => 'max:50',
+            'locker_room' => 'max:50',
+            'place_2' => 'max:50',
+            'championship_2' => 'max:50',
+            'type_2' => 'max:50',
+            'start_at_2' => 'max:50',
+            'teams_2' => 'max:50',
+            'locker_room_2' => 'max:50',
         ];
     }
 }
