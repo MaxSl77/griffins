@@ -629,59 +629,48 @@
 }
 
 /*Timetable*/
-.calendar-table {
-    width: 90%;
-    margin-top: 10px;
+.timetable {
+    display: grid;
+    grid-template-columns: repeat(7, 130px);
+    border: 1px solid white;
+    color: white;
 }
 
-.month-wrapper {
-    padding: 10px;
+
+.timetable-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 310px;
+    width: 130px;
+}
+
+.timetable > tr {
+    border: 1px solid white;
+}
+
+td {
+    padding: 5px;
 }
 
 .month {
     color: white;
     font-size: 32px;
+    text-transform: uppercase;
 }
 
-.day-wrapper {
-    border: 1px solid white;
-    padding: 10px;
-}
-
-.day {
-    color: white;
-}
-
-.date-wrapper {
-    padding: 10px 0;
-    border: 1px solid white;
-}
-
-.date {
-    color: white;
-}
-
-.weekend {
-    background-color: red;
-}
-
-.data-wrapper {
+.weekday {
+    border-bottom: 1px solid white;
+    width: 100%;
     text-align: center;
 }
 
-.data {
-    color: white;
-    padding: 3px 0;
-}
-
-.weekday-wrapper {
-    border: 1px solid white;
-}
-
-.weekend-wrapper {
-    border: 1px solid red;
+.monthdate {
+    border-bottom: 1px solid white;
+    width: 100%;
+    text-align: center;
 }
 /*End of timetable*/
+
 .container {
     padding: 10px;
 }
@@ -852,12 +841,12 @@
         font-weight: bold;
         line-height: 20px;
         transition: 0.2s;
-        color: #181133;
+        color: white;
     }
 
-    .news__description-heading::before {
-        display: none;
-    }
+    /*.news__description-heading::before {*/
+    /*    display: none;*/
+    /*}*/
 
     .footer__wrapper {
         display: block;
@@ -875,6 +864,12 @@
     }
 
     .erip__text {
+        margin: 0 auto;
+    }
+
+    .tbody {
+        max-width: 245px;
+        max-height: 455px;
         margin: 0 auto;
     }
 }

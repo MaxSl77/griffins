@@ -16,8 +16,10 @@ Route::middleware("auth:admin")->group(function() {
     Route::resource('posts', \App\Http\Controllers\Admin\PostController::class);
     Route::resource('coaches', \App\Http\Controllers\Admin\CoachController::class);
     Route::resource('players', \App\Http\Controllers\Admin\PlayerController::class);
-    Route::resource('timetables', \App\Http\Controllers\Admin\TimetableController::class);
+    Route::resource('events', \App\Http\Controllers\Admin\EventController::class)->except(['show']);
+    Route::resource('teams', \App\Http\Controllers\Admin\EventController::class)->except(['show']);
     Route::resource('attributes', \App\Http\Controllers\Admin\AttributeController::class);
+    Route::resource('teams', \App\Http\Controllers\Admin\TeamController::class);
     Route::resource('albums', \App\Http\Controllers\Admin\AlbumController::class)->names([
         'edit' => 'albums.edit',
         'create' => 'albums.create',

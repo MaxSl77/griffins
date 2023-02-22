@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\storeTeamRequest;
-use App\Http\Requests\Admin\updateTeamRequest;
+use App\Http\Requests\Admin\Team\storeTeamsRequest;
+use App\Http\Requests\Admin\Team\updateTeamsRequest;
 use App\Http\Resources\Admin\TeamCollection;
 use App\Models\Team;
 use Illuminate\Http\Request;
@@ -14,47 +14,48 @@ class TeamController extends Controller
 
     public function index()
     {
-        //переделать на view
-        return new TeamCollection(Team::all());
+        $teams = Team::all();
+
+        return view("admin.teams.index", [
+            "teams" => $teams,
+        ]);
     }
 
 
     public function create()
     {
-        //переделать на view - форма добавления команды
+        return view("admin.teams.create", []);
     }
 
 
-    public function store(storeTeamRequest $request)
+    public function store(storeTeamsRequest $request)
     {
         Team::create($request->validated());
 
-        return response()->back();
+        return redirect(route("admin.teams.index"));
     }
 
 
-    public function show($id)
+    public function edit(Team $team)
     {
-        //
+        return view("admin.teams.edit", [
+            "team" => $team,
+        ]);
     }
 
 
-    public function edit($id)
-    {
-        //
-    }
-
-
-    public function update(updateTeamRequest $request, Team $team)
+    public function update(updateTeamsRequest $request, Team $team)
     {
         $team->update($request->validated());
 
-        dd($team);
+        return redirect(route("admin.teams.index"));
     }
 
 
-    public function destroy($id)
+    public function destroy(Team $team)
     {
-        //
+        $team->delete();
+
+        return redirect(route("admin.teams.index"));
     }
 }

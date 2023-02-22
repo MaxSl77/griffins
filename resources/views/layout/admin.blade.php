@@ -203,7 +203,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('admin.timetables.index')}}" class="nav-link">
+                        <a href="{{route('admin.events.index')}}" class="nav-link">
                             <i class="nav-icon fas fa-calendar-times"></i>
                             <p>
                                 Расписание
@@ -212,14 +212,37 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{route('admin.timetables.index')}}" class="nav-link">
+                                <a href="{{route('admin.events.index')}}" class="nav-link">
                                     <p>Расписание</p>
                                 </a>
                             </li>
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{route('admin.timetables.create')}}" class="nav-link">
+                                <a href="{{route('admin.events.create')}}" class="nav-link">
+                                    <p>Добавить</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('admin.teams.index')}}" class="nav-link">
+                            <i class="nav-icon fas fa-people-arrows"></i>
+                            <p>
+                                Команды
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('admin.teams.index')}}" class="nav-link">
+                                    <p>Все команды</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('admin.teams.create')}}" class="nav-link">
                                     <p>Добавить</p>
                                 </a>
                             </li>

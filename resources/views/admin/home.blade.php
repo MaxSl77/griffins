@@ -101,13 +101,27 @@
                     <!-- small box -->
                     <div class="small-box bg-yellow">
                         <div class="inner">
-                            <h3>{{ $timetables }}</h3>
+                            <h3>{{ $events }}</h3>
                             <p>Расписание</p>
                         </div>
                         <div class="icon">
                             <i class="fas fa-calendar-times"></i>
                         </div>
-                        <a href="{{ route('admin.timetables.index') }}" class="small-box-footer">Расписание <i
+                        <a href="{{ route('admin.events.index') }}" class="small-box-footer">Расписание <i
+                                class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-purple">
+                        <div class="inner">
+                            <h3>{{ $teams }}</h3>
+                            <p>Команды</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-people-arrows"></i>
+                        </div>
+                        <a href="{{ route('admin.teams.index') }}" class="small-box-footer">Команды <i
                                 class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>

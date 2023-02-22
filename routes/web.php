@@ -34,9 +34,13 @@ Route::prefix('albums')->group(function () {
     Route::get('/{id}', [\App\Http\Controllers\AlbumController::class, 'show'])->name('albums.show');
 });
 
-Route::prefix('timetable')->group(function () {
-    Route::get('/', [\App\Http\Controllers\TimetableController::class, 'index'])->name('timetable');
+//Route::prefix('timetable')->group(function () {
+//    Route::get('/', [\App\Http\Controllers\TimetableController::class, 'index'])->name('timetable');
+//});
+Route::prefix('event')->group(function () {
+    Route::get('/', [\App\Http\Controllers\EventController::class, 'index'])->name('event');
 });
+
 
 Route::middleware("auth:web")->group(function () {
     Route::get('/logout', [\App\Http\Controllers\AuthController::class, 'logout'])->name('logout');

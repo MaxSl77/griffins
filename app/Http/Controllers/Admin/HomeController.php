@@ -7,10 +7,11 @@ use App\Models\AdminUser;
 use App\Models\Album;
 use App\Models\Attribute;
 use App\Models\Coach;
+use App\Models\Event;
 use App\Models\Photo;
 use App\Models\Player;
 use App\Models\Post;
-use App\Models\Timetable;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -22,8 +23,9 @@ class HomeController extends Controller
         $adminuser = AdminUser::all()->count();
         $players = Player::all()->count();
         $attributes = Attribute::all()->count();
-        $timetables = Timetable::all()->count();
+        $events = Event::all()->count();
         $albums = Album::all()->count();
+        $teams = Team::all()->count();
 
         return view("admin.home", [
             "posts" => $posts,
@@ -31,8 +33,9 @@ class HomeController extends Controller
             "adminuser" => $adminuser,
             "players" => $players,
             "attributes" => $attributes,
-            "timetables" => $timetables,
+            "events" => $events,
             "albums" => $albums,
+            "teams" => $teams,
         ]);
     }
 }
