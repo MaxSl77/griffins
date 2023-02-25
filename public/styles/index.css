@@ -634,14 +634,17 @@
     grid-template-columns: repeat(7, 130px);
     border: 1px solid white;
     color: white;
+    text-align: center;
+    border-radius: 10px;
 }
 
 
 .timetable-wrapper {
     display: flex;
     flex-direction: column;
-    height: 310px;
+    height: 345px;
     width: 130px;
+    border-radius: 10px;
 }
 
 .timetable > tr {
@@ -658,6 +661,10 @@ td {
     text-transform: uppercase;
 }
 
+.month-wrapper {
+    text-align: center;
+}
+
 .weekday {
     border-bottom: 1px solid white;
     width: 100%;
@@ -668,6 +675,12 @@ td {
     border-bottom: 1px solid white;
     width: 100%;
     text-align: center;
+}
+
+#danger-line {
+    width: 100px;
+    background-color: red;
+
 }
 /*End of timetable*/
 

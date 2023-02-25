@@ -8,7 +8,7 @@
         <h2 class="main__title">Расписание</h2>
         <hr class="main__line">
         <div class="main__wrapper">
-            <div class="wrap">
+{{--            <div class="wrap">--}}
                 <table class="calendar-table">
                     <thead class="calendar-tbody">
                     <?php $i = 0 ?>
@@ -26,8 +26,6 @@
                     </thead>
                     <tbody  class="timetable">
                     @foreach($events as $event)
-{{--                        <table class="timetable">--}}
-
                             <tr class="timetable-wrapper">
                                 <td class="weekday">{{$event->datetime->isoFormat('dddd')}}</td>
                                 <td class="monthdate">{{$event->datetime->isoFormat('D')}}</td>
@@ -37,12 +35,10 @@
                                 <td class="day-data">{{$event->teams->implode('name', '-')}}</td>
                                 <td class="day-data">{{$event->locker_room}}</td>
                             </tr>
-
-{{--                        </table>--}}
                     @endforeach</tbody>
                 </table>
             </div>
-        </div>
+{{--        </div>--}}
     </section>
     @include('partials.footer')
 @endsection
