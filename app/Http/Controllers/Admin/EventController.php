@@ -31,7 +31,24 @@ class EventController extends Controller
 
     public function store(EventStoreRequest $request)
     {
-        $event = Event::create($request->validated());
+        $this->validate($request, [
+            'datetime' => 'required|date',
+            'place' => 'required|string|max:150',
+            'type' => 'string|max:50',
+            'description' => 'string|nullable|max:50',
+            'locker_room' => 'string|max:100',
+            'teams' => "nullable|array|min:2|max:2",
+        ]);
+
+        $event = Event::create([
+            'datetime' => $request->datetime,
+            'place' => $request->place,
+            'type' => $request->type,
+            'description' => $request->description,
+            'locker_room' => $request->locker_room,
+            'teams' => $request->teams,
+            'underline' => $request->underline == 'on' ? 1 : 0
+        ]);
 
         if($request->teams){
             $event->teams()->attach($request->teams);
@@ -59,7 +76,24 @@ class EventController extends Controller
 
     public function update(EventUpdateRequest $request, Event $event)
     {
-        $event->update($request->validated());
+        $request->validate([
+            'datetime' => 'required|date',
+            'place' => 'required|string|max:150',
+            'type' => 'string|max:50',
+            'description' => 'string|nullable|max:50',
+            'locker_room' => 'string|max:100',
+            'teams' => "nullable|array|min:2|max:2",
+        ]);
+
+        $event->update([
+            'datetime' => $request->datetime,
+            'place' => $request->place,
+            'type' => $request->type,
+            'description' => $request->description,
+            'locker_room' => $request->locker_room,
+            'teams' => $request->teams,
+            'underline' => $request->underline == 'on' ? 1 : 0
+        ]);
 
         if($request->teams){
             $event->teams()->sync($request->teams);

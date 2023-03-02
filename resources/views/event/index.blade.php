@@ -8,7 +8,6 @@
         <h2 class="main__title">Расписание</h2>
         <hr class="main__line">
         <div class="main__wrapper">
-{{--            <div class="wrap">--}}
                 <table class="calendar-table">
                     <thead class="calendar-tbody">
                     <?php $i = 0 ?>
@@ -34,11 +33,15 @@
                                 <td class="day-data">{{$event->description}}</td>
                                 <td class="day-data">{{$event->teams->implode('name', '-')}}</td>
                                 <td class="day-data">{{$event->locker_room}}</td>
+                                <td>
+                                    @if ($event->underline == 1)
+                                        <hr style="color: red; border: 1px solid red; width: 30px">
+                                    @endif
+                                </td>
                             </tr>
                     @endforeach</tbody>
                 </table>
             </div>
-{{--        </div>--}}
     </section>
     @include('partials.footer')
 @endsection

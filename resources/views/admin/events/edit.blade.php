@@ -73,9 +73,11 @@
                     @enderror
                 </div>
                 <label for="accept">
-                    <input type="checkbox" id="my-checkbox" name="accept" onclick="myFunction()">
-                    <hr id="danger-line" style="display: none; width: 100px; background-color: red;">
+                    <input type="checkbox" id="my-checkbox" name="underline" {{ $event->underline == 1 ? 'checked' : '' }}>
                 </label>
+                @error('underline')
+                <p class="text-red-500">{{$message}}</p>
+                @enderror
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Добавить</button>
@@ -83,17 +85,6 @@
             </form>
         </div>
     </div>
-    <script>
-        function myFunction() {
-            var checkBox = document.getElementById("my-checkbox");
-            var text = document.getElementById("danger-line");
-            if (checkBox.checked == true){
-                text.style.display = "block";
-            } else {
-                text.style.display = "none";
-            }
-        }
-    </script>
 
 @endsection
 

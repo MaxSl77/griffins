@@ -24,6 +24,7 @@ class CreateEventsTable extends Migration
                 ->nullable()
                 ->constrained('teams')
                 ->nullOnDelete();
+            $table->boolean('underline')->nullable()->default(false);
             $table->timestamps();
         });
     }

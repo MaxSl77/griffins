@@ -15,6 +15,7 @@ class Event extends Model
         'type',
         'description',
         'locker_room',
+        'underline',
     ];
 
     protected $casts = [

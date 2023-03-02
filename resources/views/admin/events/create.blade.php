@@ -67,6 +67,12 @@
                     <p class="text-red-500">{{$message}}</p>
                     @enderror
                 </div>
+                <label for="accept">
+                    <input type="checkbox" id="my-checkbox" name="underline">
+                </label>
+                @error('underline')
+                <p class="text-red-500">{{$message}}</p>
+                @enderror
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Добавить</button>

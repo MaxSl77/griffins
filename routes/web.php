@@ -34,9 +34,6 @@ Route::prefix('albums')->group(function () {
     Route::get('/{id}', [\App\Http\Controllers\AlbumController::class, 'show'])->name('albums.show');
 });
 
-//Route::prefix('timetable')->group(function () {
-//    Route::get('/', [\App\Http\Controllers\TimetableController::class, 'index'])->name('timetable');
-//});
 Route::prefix('event')->group(function () {
     Route::get('/', [\App\Http\Controllers\EventController::class, 'index'])->name('event');
 });
@@ -61,7 +58,3 @@ Route::middleware("guest:web")->group(function () {
 
 Route::get('/contacts', [\App\Http\Controllers\IndexController::class, 'showContactForm'])->name('contacts');
 Route::post('/contact_form_process', [\App\Http\Controllers\IndexController::class, 'contactForm'])->name('contact_form_process');
-
-
-
-

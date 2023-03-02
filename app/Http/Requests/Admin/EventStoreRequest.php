@@ -21,7 +21,8 @@ class EventStoreRequest extends FormRequest
             'type' => 'string|max:50',
             'description' => 'string|nullable|max:50',
             'locker_room' => 'string|max:100',
-            'teams' => "nullable|array|min:2|max:2"
+            'teams' => "nullable|array|min:2|max:2",
+            'underline' => 'nullable',
         ];
     }
 }

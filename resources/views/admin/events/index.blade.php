@@ -31,6 +31,9 @@
                     <th>
                         Раздевалки
                     </th>
+                    <th>
+                        Линия
+                    </th>
                     <th style="width: 20%">
                     </th>
                 </tr>
@@ -47,6 +50,11 @@
                             <td>{{$event->description}}</td>
                             <td>{{ $event->teams->implode('name', '-')}}</td>
                             <td>{{$event->locker_room}}</td>
+                            <td>
+                                @if ($event->underline == 1)
+                                    <hr style="color: red; border: 1px solid red; width: 30px">
+                                @endif
+                            </td>
                             <td>
                                 <a class="btn btn-info btn-sm" href="{{route('admin.events.edit', $event->id)}}">
                                     <i class="fas fa-pencil-alt">
