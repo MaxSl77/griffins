@@ -631,7 +631,7 @@
 /*Timetable*/
 .timetable {
     display: grid;
-    grid-template-columns: repeat(7, 130px);
+    grid-template-columns: repeat(7, 150px);
     border: 1px solid white;
     color: white;
     text-align: center;
@@ -642,17 +642,13 @@
 .timetable-wrapper {
     display: flex;
     flex-direction: column;
-    height: 345px;
-    width: 130px;
+    /*height: 565px;*/
+    width: 150px;
     border-radius: 10px;
 }
 
 .timetable > tr {
     border: 1px solid white;
-}
-
-td {
-    padding: 5px;
 }
 
 .month {
@@ -669,19 +665,28 @@ td {
     border-bottom: 1px solid white;
     width: 100%;
     text-align: center;
+    padding: 5px 0;
 }
 
 .monthdate {
     border-bottom: 1px solid white;
     width: 100%;
     text-align: center;
+    padding: 5px 0;
 }
 
-#danger-line {
-    width: 100px;
-    background-color: red;
-
+.day-data {
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
 }
+
+ .events-separator {
+     color: red;
+     border: 1px solid red;
+     width: 145px;
+     margin: 0 auto;
+ }
 /*End of timetable*/
 
 .container {

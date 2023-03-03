@@ -25,6 +25,11 @@ class CreateEventsTable extends Migration
                 ->constrained('teams')
                 ->nullOnDelete();
             $table->boolean('underline')->nullable()->default(false);
+            $table->dateTime('second_datetime')->nullable();
+            $table->string('second_place')->nullable();
+            $table->string('second_type')->nullable();
+            $table->string('second_description')->nullable();
+            $table->string('second_locker_room')->nullable();
             $table->timestamps();
         });
     }

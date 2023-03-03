@@ -16,10 +16,16 @@ class Event extends Model
         'description',
         'locker_room',
         'underline',
+        'second_datetime',
+        'second_place',
+        'second_type',
+        'second_description',
+        'second_locker_room',
     ];
 
     protected $casts = [
-      'datetime' => 'datetime:Y-m-d H:00'
+      'datetime' => 'datetime:Y-m-d H:00',
+      'second_datetime' => 'datetime:Y-m-d H:00'
     ];
 
     public function teams()

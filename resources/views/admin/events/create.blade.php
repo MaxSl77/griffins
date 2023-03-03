@@ -75,6 +75,51 @@
                 @enderror
 
                 <div class="form-group">
+                    <label for="datetime">Дата и время:</label><br>
+                    <input type="datetime-local" class="form-control" name="second_datetime"
+                           placeholder="Дата и время: ">
+                    @error('second_datetime')
+                    <p class="text-red-500">{{$message}}</p>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="place">Второе место:</label><br>
+                    <input type="text" class="form-control" name="second_place"
+                           placeholder="Второе место: ">
+                    @error('second_place')
+                    <p class="text-red-500">{{$message}}</p>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="type">Второй тип события:</label><br>
+                    <input type="text" class="form-control" name="second_type"
+                           placeholder="Тип события: ">
+                    @error('second_type')
+                    <p class="text-red-500">{{$message}}</p>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Второе описание:</label><br>
+                    <input type="text" class="form-control" name="second_description"
+                           placeholder="Описание: ">
+                    @error('second_description')
+                    <p class="text-red-500">{{$message}}</p>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="locker_room">Раздевалки:</label><br>
+                    <input type="text" class="form-control" name="second_locker_room"
+                           placeholder="Раздевалки: ">
+                    @error('second_locker_room')
+                    <p class="text-red-500">{{$message}}</p>
+                    @enderror
+                </div>
+
+                <div class="form-group">
                     <button type="submit" class="btn btn-primary">Добавить</button>
                 </div>
             </form>

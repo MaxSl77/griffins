@@ -20,8 +20,6 @@
                     </tr>
                     @endforeach
 
-
-
                     </thead>
                     <tbody  class="timetable">
                     @foreach($events as $event)
@@ -31,15 +29,24 @@
                                 <td class="day-data">{{$event->place}}</td>
                                 <td class="day-data">{{$event->type}}</td>
                                 <td class="day-data">{{$event->description}}</td>
+                                <td class="day-data">{{$event->datetime->isoFormat('H:mm')}}</td>
                                 <td class="day-data">{{$event->teams->implode('name', '-')}}</td>
                                 <td class="day-data">{{$event->locker_room}}</td>
                                 <td>
                                     @if ($event->underline == 1)
-                                        <hr style="color: red; border: 1px solid red; width: 30px">
+                                        <hr class="events-separator">
                                     @endif
                                 </td>
+                                <td class="day-data">{{$event->second_place}}</td>
+                                <td class="day-data">{{$event->second_type}}</td>
+                                <td class="day-data">{{$event->second_description}}</td>
+                                @if ($event->second_datetime)
+                                    <td class="day-data">{{$event->second_datetime->isoFormat('H:mm')}}</td>
+                                @endif
+                                <td class="day-data">{{$event->second_locker_room}}</td>
                             </tr>
-                    @endforeach</tbody>
+                    @endforeach
+                    </tbody>
                 </table>
             </div>
     </section>

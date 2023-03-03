@@ -80,6 +80,51 @@
                 @enderror
 
                 <div class="form-group">
+                    <label for="datetime">Дата и время:</label><br>
+                    <input type="datetime-local" class="form-control" name="second_datetime"
+                           placeholder="Дата и время: " value="{{old('second_datetime', $event->second_datetime)}}">
+                    @error('second_datetime')
+                    <p class="text-red-500">{{$message}}</p>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="place">Второе место:</label><br>
+                    <input type="text" class="form-control" name="second_place"
+                           placeholder="Место: " value="{{old('second_place', $event->second_place)}}">
+                    @error('second_place')
+                    <p class="text-red-500">{{$message}}</p>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="type">Второй тип события:</label><br>
+                    <input type="text" class="form-control" name="second_type"
+                           placeholder="Второй тип события: " value="{{old('second_type', $event->second_type)}}">
+                    @error('second_type')
+                    <p class="text-red-500">{{$message}}</p>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Второе описание:</label><br>
+                    <input type="text" class="form-control" name="second_description"
+                           placeholder="Второе описание: " value="{{old('second_description', $event->second_description)}}">
+                    @error('second_description')
+                    <p class="text-red-500">{{$message}}</p>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="locker_room">Раздевалки:</label><br>
+                    <input type="text" class="form-control" name="second_locker_room"
+                           placeholder="Раздевалки: " value="{{old('second_locker_room', $event->second_locker_room)}}">
+                    @error('second_locker_room')
+                    <p class="text-red-500">{{$message}}</p>
+                    @enderror
+                </div>
+
+                <div class="form-group">
                     <button type="submit" class="btn btn-primary">Добавить</button>
                 </div>
             </form>
