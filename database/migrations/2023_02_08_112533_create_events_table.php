@@ -16,10 +16,10 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->dateTime('datetime');
-            $table->string('place');
-            $table->string('type');
+            $table->string('place')->nullable();
+            $table->string('type')->nullable();
             $table->string('description')->nullable();
-            $table->string('locker_room');
+            $table->string('locker_room')->nullable();
             $table->foreignId('team_id')
                 ->nullable()
                 ->constrained('teams')

@@ -1,5 +1,3 @@
-import doc from "../admin/plugins/uplot/uPlot.esm";
-
 let menuBtn = document.querySelector('.mobile-menu-icon');
 let menu = document.querySelector('.mobile__menu');
 if (menuBtn) {

@@ -33,11 +33,12 @@ class EventController extends Controller
     {
         $this->validate($request, [
             'datetime' => 'required|date',
-            'place' => 'required|string|max:150',
-            'type' => 'string|max:50',
+            'place' => 'nullable|string|max:150',
+            'type' => 'nullable|string|max:50',
             'description' => 'string|nullable|max:50',
-            'locker_room' => 'string|max:100',
+            'locker_room' => 'nullable|string|max:100',
             'teams' => "nullable|array|min:2|max:2",
+            'underline' => 'nullable',
             'second_datetime' => 'nullable|date',
             'second_place' => 'nullable|string|max:150',
             'second_type' => 'nullable|string|max:50',
@@ -88,11 +89,12 @@ class EventController extends Controller
     {
         $request->validate([
             'datetime' => 'required|date',
-            'place' => 'required|string|max:150',
-            'type' => 'string|max:50',
+            'place' => 'nullable|string|max:150',
+            'type' => 'nullable|string|max:50',
             'description' => 'string|nullable|max:50',
-            'locker_room' => 'string|max:100',
+            'locker_room' => 'nullable|string|max:100',
             'teams' => "nullable|array|min:2|max:2",
+            'underline' => 'nullable',
             'second_datetime' => 'nullable|date',
             'second_place' => 'nullable|string|max:150',
             'second_type' => 'nullable|string|max:50',
