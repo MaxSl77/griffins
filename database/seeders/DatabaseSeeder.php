@@ -7,6 +7,7 @@ use App\Models\Attribute;
 use App\Models\Coach;
 use App\Models\Player;
 use App\Models\Post;
+use App\Models\SecondTeam;
 use App\Models\Team;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -37,5 +38,7 @@ class DatabaseSeeder extends Seeder
         Attribute::factory(10)->create();
 
         Team::factory(10)->create();
+
+        SecondTeam::factory(10)->create();
     }
 }

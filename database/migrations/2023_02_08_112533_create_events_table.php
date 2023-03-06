@@ -30,6 +30,10 @@ class CreateEventsTable extends Migration
             $table->string('second_type')->nullable();
             $table->string('second_description')->nullable();
             $table->string('second_locker_room')->nullable();
+            $table->foreignId('second_team_id')
+                ->nullable()
+                ->constrained('second_teams')
+                ->nullOnDelete();
             $table->timestamps();
         });
     }

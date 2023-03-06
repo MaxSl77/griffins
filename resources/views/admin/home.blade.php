@@ -127,6 +127,20 @@
                 </div>
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
+                    <div class="small-box bg-purple">
+                        <div class="inner">
+                            <h3>{{ $secondTeams }}</h3>
+                            <p>Команды</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-people-arrows"></i>
+                        </div>
+                        <a href="{{ route('admin.secondTeams.index') }}" class="small-box-footer">Команды <i
+                                class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
                     <div class="small-box bg-gray">
                         <div class="inner">
                             <h3>{{ $attributes }}</h3>

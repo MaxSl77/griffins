@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Team\storeTeamsRequest;
 use App\Http\Requests\Admin\Team\updateTeamsRequest;
-use App\Http\Resources\Admin\TeamCollection;
 use App\Models\Team;
 use Illuminate\Http\Request;
 

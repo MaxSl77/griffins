@@ -249,6 +249,29 @@
                         </ul>
                     </li>
                     <li class="nav-item">
+                        <a href="{{route('admin.secondTeams.index')}}" class="nav-link">
+                            <i class="nav-icon fas fa-people-arrows"></i>
+                            <p>
+                                Команды
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('admin.secondTeams.index')}}" class="nav-link">
+                                    <p>Все команды</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('admin.secondTeams.create')}}" class="nav-link">
+                                    <p>Добавить</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{route('admin.attributes.index')}}" class="nav-link">
                             <i class="nav-icon fas fa-universal-access"></i>
                             <p>

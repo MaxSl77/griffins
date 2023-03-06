@@ -55,6 +55,7 @@
                             @if ($event->second_datetime)
                                 <td class="day-data">{{$event->second_datetime->isoFormat('H:mm')}}</td>
                             @endif
+                            <td class="day-data">{{$event->second_teams->implode('second_name', '-')}}</td>
                             <td class="day-data">{{$event->second_locker_room}}</td>
                         </tr>
                     @endforeach

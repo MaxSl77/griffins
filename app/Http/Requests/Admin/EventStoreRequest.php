@@ -9,7 +9,7 @@ class EventStoreRequest extends FormRequest
 
     public function authorize()
     {
-        return true;
+        return auth("admin")->check();
     }
 
 
@@ -28,6 +28,7 @@ class EventStoreRequest extends FormRequest
             'second_type' => 'nullable|string|max:50',
             'second_description' => 'string|nullable|max:50',
             'second_locker_room' => 'nullable|string|max:100',
+            'second_teams' => "nullable|array|min:2|max:2",
         ];
     }
 }

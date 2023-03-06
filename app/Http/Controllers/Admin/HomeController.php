@@ -11,6 +11,7 @@ use App\Models\Event;
 use App\Models\Photo;
 use App\Models\Player;
 use App\Models\Post;
+use App\Models\SecondTeam;
 use App\Models\Team;
 use Illuminate\Http\Request;
 
@@ -26,6 +27,7 @@ class HomeController extends Controller
         $events = Event::all()->count();
         $albums = Album::all()->count();
         $teams = Team::all()->count();
+        $secondTeams = SecondTeam::all()->count();
 
         return view("admin.home", [
             "posts" => $posts,
@@ -36,6 +38,7 @@ class HomeController extends Controller
             "events" => $events,
             "albums" => $albums,
             "teams" => $teams,
+            "secondTeams" => $secondTeams,
         ]);
     }
 }

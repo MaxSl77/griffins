@@ -125,6 +125,24 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="locker_room"> Выберите ДВЕ команды:</label><br>
+                    <select class="form-select" name="second_teams[]" multiple="multiple">
+                        <option disabled>Выберите команд</option>
+
+                        @foreach($selectedSecondTeams as $secondTeam)
+                            <option value="{{$secondTeam->id}}" selected>{{$secondTeam->second_name}}</option>
+                        @endforeach
+
+                        @foreach($unSelectedSecond as $secondTeam)
+                            <option value="{{$secondTeam->id}}">{{$secondTeam->second_name}}</option>
+                        @endforeach
+                    </select>
+                    @error('second_teams')
+                    <p class="text-red-500">{{$message}}</p>
+                    @enderror
+                </div>
+
+                <div class="form-group">
                     <button type="submit" class="btn btn-primary">Добавить</button>
                 </div>
             </form>

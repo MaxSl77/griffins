@@ -32,4 +32,9 @@ class Event extends Model
     {
         return $this->belongsToMany(Team::class, 'event_team');
     }
+
+    public function second_teams()
+    {
+        return $this->belongsToMany(SecondTeam::class, 'second_event_team');
+    }
 }
